@@ -22,6 +22,7 @@ object FutureScanner {
     def main(args: Array[String]) {
         val scanner = new Portscanner()
         val start = System.nanoTime
+        // Nice way of creating a list of ints
         val portList = ( 1 to 65535 ).map{ x => scanner.scan(x)} foreachAsync println
         val micros = (System.nanoTime - start) / 1000
         println("%d microseconds".format(micros))
